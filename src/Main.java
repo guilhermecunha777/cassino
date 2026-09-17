@@ -1,5 +1,12 @@
+import saldo.SaldoMenu;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("hello world");
+//        CacaNiquel jogo = new CacaNiquel();
+//
+//        jogo.iniciar();
+        SaldoMenu saldoMenu = new SaldoMenu();
+
+        saldoMenu.iniciar();
     }
 }
