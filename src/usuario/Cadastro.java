@@ -1,17 +1,14 @@
-package usuario;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class Login {
+public class Cadastro{
     Usuario usuario;
-    
-    public Login(){
 
-    }
-    
-    public Boolean verificaLogin(){
+    public boolean  cadastrar(){
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Insira seu nome: ");
         String nome = sc.nextLine();
@@ -26,8 +23,25 @@ public class Login {
 
         DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate data = LocalDate.parse(dataNasc, formatador);
+        boolean verificaIdade = verificaIdade(data);
+        
+        if(verificaIdade){
+            usuario = new Usuario(nome, cpf, data, telefone, senha);
+            System.out.println(nome +", VOCÊ FOI CADASTRADO COM SUCESSO 🎉🎉");
+        }
 
-        usuario = new Usuario(nome, cpf, data, telefone, senha);
+
         return true;
+
+    }
+    
+    public boolean verificaIdade(LocalDate data){
+        LocalDate diaAtual = LocalDate.now();
+        if(Period.between(data, diaAtual).getYears() >= 18){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
