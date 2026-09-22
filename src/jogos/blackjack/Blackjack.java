@@ -323,5 +323,3 @@ public class Blackjack {
         }
     }
 }
-
-//Eu parei de mexer no momento em que o programa não estava executando de modo correto as regras(jogador).
