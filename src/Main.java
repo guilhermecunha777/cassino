@@ -1,6 +1,5 @@
 
 import entrar.Cadastro;
-import java.util.Scanner;
 import util.Util;
 
 public class Main {
