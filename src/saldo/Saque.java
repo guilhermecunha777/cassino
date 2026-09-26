@@ -1,22 +1,20 @@
 package saldo;
 
-import util.Util;
-
 import java.util.Scanner;
+import util.Util;
 
 public class Saque {
 
     int ms = 300;
 
     public int iniciar(int saldo) {
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("=======SAQUE=======");
         System.out.println("Saldo: R$" + saldo);
 
-        System.out.println("digite o valor para saque: ");
-        int saque = scanner.nextInt();
+        System.out.println("Digite o valor para saque: ");
+        int saque = Integer.parseInt(scanner.nextLine().trim());
 
         if (saque > saldo) {
 
