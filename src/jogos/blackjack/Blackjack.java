@@ -1,15 +1,23 @@
 package jogos.blackjack;
 
+import entrar.Usuario;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 import util.Util;
 public class Blackjack {
+
+    Usuario usuario;
+
     String[] baralho = {"AS_COPAS","2_COPAS","3_COPAS","4_COPAS","5_COPAS","6_COPAS","7_COPAS","8_COPAS","9_COPAS","10_COPAS","J_COPAS","Q_COPAS","K_COPAS","AS_PAUS","2_PAUS","3_PAUS","4_PAUS","5_PAUS","6_PAUS","7_PAUS","8_PAUS","9_PAUS","10_PAUS","J_PAUS","Q_PAUS","K_PAUS","AS_OUROS","2_OUROS","3_OUROS","4_OUROS","5_OUROS","6_OUROS","7_OUROS","8_OUROS","9_OUROS","10_OUROS","J_OUROS","Q_OUROS","K_OUROS","AS_ESPADAS","2_ESPADAS","3_ESPADAS","4_ESPADAS","5_ESPADAS","6_ESPADAS","7_ESPADAS","8_ESPADAS","9_ESPADAS","10_ESPADAS","J_ESPADAS","Q_ESPADAS","K_ESPADAS"};
     
     ArrayList<Integer> cartasSorteadas = new ArrayList<>();
     Carta[] cartasJogador = new Carta[10];
     Carta[] cartasDealer = new Carta[10];
+
+    public Blackjack(Usuario usuario){
+        this.usuario = usuario;
+    }
     
 
     //Trata os valores das cartas. Transforma as letras no seu respectivo valor.
@@ -123,7 +131,7 @@ public class Blackjack {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
 
-        int saldo = 100;
+        int saldo = usuario.getSaldo();
 
         System.out.println("======= BLACKJACK =======");
         mensagemSaldo(saldo);

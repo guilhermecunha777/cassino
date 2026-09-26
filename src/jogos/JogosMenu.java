@@ -2,6 +2,7 @@ package jogos;
 
 import entrar.Usuario;
 import java.util.Scanner;
+import jogos.blackjack.Blackjack;
 import util.Util;
 
 public class JogosMenu {
@@ -34,7 +35,8 @@ public class JogosMenu {
                     break;
 
                 case 2:
-                    System.out.println("Black Jack ainda não foi implementado.");
+                    Blackjack blackjack = new Blackjack(usuario);
+                    blackjack.iniciar();
                     break;
 
                 case 0:

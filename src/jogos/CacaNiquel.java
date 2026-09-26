@@ -7,7 +7,7 @@ import util.Util;
 
 public class CacaNiquel {
 
-    private final Usuario usuario;
+    Usuario usuario;
 
     public CacaNiquel(Usuario usuario) {
         this.usuario = usuario;
