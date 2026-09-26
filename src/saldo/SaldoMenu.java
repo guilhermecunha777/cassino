@@ -1,13 +1,29 @@
 package saldo;
 
+import entrar.Usuario;
 import java.util.Scanner;
+import jogos.JogosMenu;
+import util.Util;
 
 public class SaldoMenu {
 
-    public void iniciar() {
-        Scanner scanner = new Scanner(System.in);
+    Usuario usuario;
 
-        int saldo = 100;
+    public SaldoMenu() {
+    }
+
+    public SaldoMenu(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public void iniciar() {
+        if (usuario == null) {
+            System.out.println("Erro: usuário não identificado.");
+            return;
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        int saldo = usuario.getSaldo();
         int option;
 
         do {
@@ -16,26 +32,43 @@ public class SaldoMenu {
             System.out.println("1 - SACAR");
             System.out.println("2 - DEPOSITAR");
             System.out.println("3 - RESGATAR PRESENTE");
+            System.out.println("4 - MENU DE JOGOS");
             System.out.println("0 - SAIR");
 
-            option = scanner.nextInt();
+            String linha = scanner.nextLine();
+            option = Integer.parseInt(linha.trim());
 
             switch (option) {
                 case 1: {
                     Saque saque = new Saque();
-
                     saldo = saque.iniciar(saldo);
-                } break;
+                    usuario.setSaldo(saldo);
+                    break;
+                }
                 case 2: {
                     Deposito deposito = new Deposito();
-
                     saldo = deposito.iniciar(saldo);
-                } break;
+                    usuario.setSaldo(saldo);
+                    break;
+                }
                 case 3: {
                     ResgatePresente resgate = new ResgatePresente();
-
                     saldo = resgate.iniciar(saldo);
-                } break;
+                    usuario.setSaldo(saldo);
+                    break;
+                }
+                case 4: {
+                    JogosMenu jogosMenu = new JogosMenu(usuario);
+                    jogosMenu.iniciar();
+                    saldo = usuario.getSaldo();
+                    break;
+                }
+                case 0:
+                    break;
+                default:
+                    System.out.println("Opção inválida, digite uma opção de 1 a 5");
+                    Util.esperar(500);
+                    break;
             }
         } while (option != 0);
     }
