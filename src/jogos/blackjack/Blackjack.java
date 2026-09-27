@@ -276,12 +276,10 @@ public class Blackjack {
                 usuario.setSaldo(saldo);
                 System.out.println("Empate. Os pontos do dealer foram iguais aos seus.");
                 mensagemSaldo(saldo);
-                System.exit(0);
             }
             else{
                 System.out.println("Voce perdeu. Os pontos do dealer foram maiores que os seus.");
                 mensagemSaldo(saldo);
-                System.exit(0);
             }
         }
         //O dealer deve pedir mais cartas até ele atingir o valor de 17 ou mais. Caso a mão do jogador for maior que 17, o dealer é obrigado a ter o valor igual(se for 21) ou maior.
