@@ -139,6 +139,7 @@ public class Blackjack {
         System.out.print("Digite o valor da aposta: R$");
         int aposta = sc.nextInt();
         saldo -= aposta;
+        usuario.setSaldo(saldo);
 
         System.out.print("Entregando as cartas");
         //Aniamação de "..." para a entrega das cartas
@@ -272,6 +273,7 @@ public class Blackjack {
             mostrarMesa(dealerEscondeCarta, d, j); 
             if(valorMaoJogador == 21){
                 saldo += aposta;
+                usuario.setSaldo(saldo);
                 System.out.println("Empate. Os pontos do dealer foram iguais aos seus.");
                 mensagemSaldo(saldo);
                 System.exit(0);
@@ -315,6 +317,7 @@ public class Blackjack {
         if(valorMaoDealer > 21){
             int valorGanho = aposta *= 2;
             saldo += valorGanho;
+            usuario.setSaldo(saldo);
             System.out.println("Voce ganhou. Os pontos do dealer passaram 21.");
             mensagemSaldo(saldo);
         }
@@ -326,6 +329,7 @@ public class Blackjack {
         //Empate(Jogador)
         else if(valorMaoDealer == valorMaoJogador){
             saldo += aposta;
+            usuario.setSaldo(saldo);
             System.out.println("Empate. O dealer atingiu os mesmos pontos que você.");
             mensagemSaldo(saldo);
         }
