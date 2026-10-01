@@ -133,7 +133,16 @@ public class Blackjack {
 
         int saldo = usuario.getSaldo();
 
-        System.out.println("======= BLACKJACK =======");
+        System.out.println("╔══════════════════════════════════════════════════════════════════╗");
+        System.out.println("║                                                                  ║");
+        System.out.println("║  ██████╗░██╗░░░░░░█████╗░░█████╗░██╗░░██╗░░░░░██╗░█████╗░░█████╗░██╗░░██╗");
+        System.out.println("║  ██╔══██╗██║░░░░░██╔══██╗██╔══██╗██║░██╔╝░░░░░██║██╔══██╗██╔══██╗██║░██╔╝");
+        System.out.println("║  ██████╦╝██║░░░░░███████║██║░░╚═╝█████═╝░░░░░░██║███████║██║░░╚═╝█████═╝░");
+        System.out.println("║  ██╔══██╗██║░░░░░██╔══██║██║░░██╗██╔═██╗░██╗░░██║██╔══██║██║░░██╗██╔═██╗░");
+        System.out.println("║  ██████╦╝███████╗██║░░██║╚█████╔╝██║░╚██╗╚█████╔╝██║░░██║╚█████╔╝██║░╚██╗");
+        System.out.println("║  ╚═════╝░╚══════╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝");
+        System.out.println("║                                                                  ║");
+        System.out.println("╚══════════════════════════════════════════════════════════════════╝");
         mensagemSaldo(saldo);
 
         System.out.print("Digite o valor da aposta: R$");
@@ -263,7 +272,7 @@ public class Blackjack {
                 System.out.println("Voce perdeu. Sua mao vale mais do que 21.");
                 mensagemSaldo(saldo);
                 pedirMaisCartas = false;
-                System.exit(0);
+                return;
             }
         }
 
