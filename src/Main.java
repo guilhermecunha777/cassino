@@ -1,13 +1,12 @@
-import jogos.CacaNiquel;
 import saldo.SaldoMenu;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        CacaNiquel jogo = new CacaNiquel();
-//
-//        jogo.iniciar();
+        Scanner s = new Scanner(System.in);
         SaldoMenu saldoMenu = new SaldoMenu();
 
-        saldoMenu.iniciar();
+        saldoMenu.iniciar(s);
     }
 }

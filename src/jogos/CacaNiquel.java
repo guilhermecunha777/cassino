@@ -1,6 +1,6 @@
 package jogos;
 
-import util.Util;
+import utilidade.Utilidade;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -36,30 +36,30 @@ public class CacaNiquel {
             // O /r faz o cursor voltar para o começo da linha
             System.out.print("\r[" + n1 + " ? ?]");
             // Delay de 100 milissegundos
-            Util.esperar(100);
+            Utilidade.esperar(100);
         }
 
         //Após o looping, da print no valor já selecionado anteriormente
         System.out.print("\r[" + numero1 + " ? ?]");
-        Util.esperar(500);
+        Utilidade.esperar(500);
 
         // Segunda coluna
         for (int i = 0; i < 15; i++) {
             int n2 = random.nextInt(5) + 1;
 
             System.out.print("\r[" + numero1 + " " + n2 + " ?]");
-            Util.esperar(100);
+            Utilidade.esperar(100);
         }
 
         System.out.print("\r[" + numero1 + " " + numero2 + " ?]");
-        Util.esperar(500);
+        Utilidade.esperar(500);
 
         // Terceira coluna
         for (int i = 0; i < 15; i++) {
             int n3 = random.nextInt(5) + 1;
 
             System.out.print("\r[" + numero1 + " " + numero2 + " " + n3 + "]");
-            Util.esperar(100);
+            Utilidade.esperar(100);
         }
 
         // Print com o resultado final

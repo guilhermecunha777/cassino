@@ -1,6 +1,6 @@
 package saldo;
 
-import util.Util;
+import utilidade.Utilidade;
 
 import java.util.Scanner;
 
@@ -8,15 +8,13 @@ public class Deposito {
 
     int ms = 300;
 
-    public int iniciar(int saldo) {
-
-        Scanner scanner = new Scanner(System.in);
+    public int iniciar(Scanner s, int saldo) {
 
         System.out.println("=======DEPOSITO=======");
         System.out.println("Saldo: R$" + saldo);
 
         System.out.println("digite o valor de depósito: ");
-        int deposito = scanner.nextInt();
+        int deposito = s.nextInt();
 
         saldo += deposito;
 
@@ -34,16 +32,16 @@ public class Deposito {
         for (int i = 0; i < 2; i++) {
 
             System.out.print("\r" + mensagem + ".");
-            Util.esperar(ms);
+            Utilidade.esperar(ms);
 
             System.out.print("\r" + mensagem + "..");
-            Util.esperar(ms);
+            Utilidade.esperar(ms);
 
             System.out.print("\r" + mensagem + "...");
-            Util.esperar(ms);
+            Utilidade.esperar(ms);
 
             System.out.print("\r" + mensagem + "   ");
-            Util.esperar(ms);
+            Utilidade.esperar(ms);
         }
 
         System.out.println("\rDepósito confirmado!");

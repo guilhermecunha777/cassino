@@ -1,6 +1,6 @@
 package saldo;
 
-import util.Util;
+import utilidade.Utilidade;
 
 import java.util.Scanner;
 
@@ -8,15 +8,22 @@ public class Saque {
 
     int ms = 300;
 
-    public int iniciar(int saldo) {
+    public int iniciar(Scanner s, int saldo) {
 
-        Scanner scanner = new Scanner(System.in);
+        int saque;
 
-        System.out.println("=======SAQUE=======");
-        System.out.println("Saldo: R$" + saldo);
+        do {
+            System.out.println("=======SAQUE=======");
+            System.out.println("Saldo: R$" + saldo);
 
-        System.out.println("digite o valor para saque: ");
-        int saque = scanner.nextInt();
+            System.out.println("digite o valor para saque: ");
+            saque = s.nextInt();
+
+            if (saldo < saque) {
+                System.out.println("O valor de saque não pode exceder o saldo!");
+            }
+
+        } while (saldo > saque);
 
         if (saque > saldo) {
 
@@ -42,16 +49,16 @@ public class Saque {
         for (int i = 0; i < 2; i++) {
 
             System.out.print("\r" + mensagem + ".");
-            Util.esperar(ms);
+            Utilidade.esperar(ms);
 
             System.out.print("\r" + mensagem + "..");
-            Util.esperar(ms);
+            Utilidade.esperar(ms);
 
             System.out.print("\r" + mensagem + "...");
-            Util.esperar(ms);
+            Utilidade.esperar(ms);
 
             System.out.print("\r" + mensagem + "   ");
-            Util.esperar(ms);
+            Utilidade.esperar(ms);
         }
 
         System.out.println("\rSaque confirmado!");

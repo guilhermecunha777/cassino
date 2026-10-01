@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 public class SaldoMenu {
 
-    public void iniciar() {
-        Scanner scanner = new Scanner(System.in);
-
+    public void iniciar(Scanner s) {
         int saldo = 100;
         int option;
 
@@ -15,26 +13,26 @@ public class SaldoMenu {
             System.out.println("Saldo: R$" + saldo);
             System.out.println("1 - SACAR");
             System.out.println("2 - DEPOSITAR");
-            System.out.println("3 - RESGATAR PRESENTE");
+            System.out.println("3 - RESGATAR CÓDIGO");
             System.out.println("0 - SAIR");
 
-            option = scanner.nextInt();
+            option = s.nextInt();
 
             switch (option) {
                 case 1: {
                     Saque saque = new Saque();
 
-                    saldo = saque.iniciar(saldo);
+                    saldo = saque.iniciar(s, saldo);
                 } break;
                 case 2: {
                     Deposito deposito = new Deposito();
 
-                    saldo = deposito.iniciar(saldo);
+                    saldo = deposito.iniciar(s, saldo);
                 } break;
                 case 3: {
-                    ResgatePresente resgate = new ResgatePresente();
+                    ResgateCodigo resgate = new ResgateCodigo();
 
-                    saldo = resgate.iniciar(saldo);
+                    saldo = resgate.iniciar(s, saldo);
                 } break;
             }
         } while (option != 0);

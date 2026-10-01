@@ -1,6 +1,6 @@
-package util;
+package utilidade;
 
-public class Util {
+public class Utilidade {
     public static void esperar(int ms) {
         // Nescessário o try catch por causa que a função "sleep() pode retornar um erro InterruptedException"
         try {
